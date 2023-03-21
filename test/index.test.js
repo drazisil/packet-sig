@@ -1,4 +1,4 @@
-import { getPacketSignatures  } from "./PacketSignature"
+import { getPacketSignatures  } from "../lib/PacketSignature.js"
 
 
 /**
@@ -11,7 +11,7 @@ function sayHello(inputBuffer) {
     console.log("Hello!")
 }
 
-/** @type {import("./PacketSignature").PacketSignatureRecord[]} */
+/** @type {import("../lib/PacketSignature").PacketSignatureRecord[]} */
 const initialSignatures = [
     {
         signature: Buffer.from([0x21, 0x3c, 0x61, 0x72, 0x63, 0x68, 0x3e]),
@@ -43,5 +43,7 @@ signatures.addFileSignature(
     sayHello
 )
 
+const f = signatures.getHandler(Buffer.from([0x16, 0x2c]))
 
+f(Buffer.from([0x16, 0x2c]))
 
