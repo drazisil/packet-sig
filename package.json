@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "18.16.2"
+    "@types/node": "18.16.3"
   }
 }
